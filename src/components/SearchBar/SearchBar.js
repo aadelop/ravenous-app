@@ -7,7 +7,7 @@ let sortByOptions = {
 	"Most Reviewed":"review_count"
 }
 
-export default class SearchBar{
+export default class SearchBar extends React.Component{
 	
 	renderSortByOptions(){
 		return Object.keys(sortByOptions).map(sortByOption => {
@@ -17,7 +17,7 @@ export default class SearchBar{
 	}
 
 	render(){
-		reutrn(<div className="SearchBar">
+		return(<div className="SearchBar">
 				  <div className="SearchBar-sort-options">
 				    <ul>
 				    	<renderSortByOptions />
