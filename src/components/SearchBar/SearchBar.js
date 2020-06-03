@@ -45,6 +45,7 @@ export default class SearchBar extends React.Component{
 		})
 	}
 	handleSearch(e){
+		//alert('Clicking lets go')
 		this.props.searchYelp(this.state.term,this.state.location,this.state.sortBy);
 		e.preventDefault();
 	}
@@ -67,8 +68,8 @@ export default class SearchBar extends React.Component{
 				    </ul>
 				  </div>
 				  <div className="SearchBar-fields">
-				    <input onChange={this.handleLocationChange} placeholder="Search Businesses" />
-				    <input onChange={this.handleTermChange} placeholder="Where?" />
+				    <input onChange={this.handleTermChange} placeholder="Search Businesses" />
+				    <input onChange={this.handleLocationChange} placeholder="Where?" />
 				  </div>
 				  <div className="SearchBar-submit">
 				    <a onClick={this.handleSearch}>Let's Go</a>
