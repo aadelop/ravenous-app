@@ -4,6 +4,18 @@ import './Business.css';
 
 
 export default  class Business extends React.Component{
+
+	urlGoogleMaps(address, city){
+		
+		let addressStr = address.split(/[ ,]/).filter(item => {
+		  return item != "";
+		}).join("+");
+
+		let url= `https://www.google.com/maps/search/?api=1&query=${addressStr}%2C+${city}`;
+
+		return url;
+	}
+
 	render(){
 		let business = this.props.business;
 		return(
@@ -14,7 +26,7 @@ export default  class Business extends React.Component{
 			  <h2>{business.name}</h2>
 			  <div className="Business-information">
 			    <div className="Business-address">
-			      <p>{business.address}</p>
+			      <p><a href={this.urlGoogleMaps(business.address,business.city)}>{business.address}</a></p>
 			      <p>{business.city}</p>
 			      <p>{business.state} {business.zipCode}</p>
 			    </div>
@@ -28,3 +40,4 @@ export default  class Business extends React.Component{
 		)
 	}
 }
+
