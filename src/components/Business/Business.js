@@ -16,12 +16,15 @@ export default  class Business extends React.Component{
 		return url;
 	}
 
+
+
 	render(){
 		let business = this.props.business;
 		return(
 			<div className="Business">
 			  <div className="image-container">
-			    <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/>
+			  	<a href={business.url}><img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/></a>
+			   
 			  </div>
 			  <h2>{business.name}</h2>
 			  <div className="Business-information">
