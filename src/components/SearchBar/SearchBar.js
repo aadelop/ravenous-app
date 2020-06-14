@@ -28,10 +28,12 @@ export default class SearchBar extends React.Component{
 			return '';
 	}
 
-	handleSortByChange(sortByOption){
+	handleSortByChange(sortByOption, e){
 		this.setState({
 			sortBy: sortByOption
 		})
+
+		this.handleSearch(e)
 	}
 
 	handleTermChange(e){
